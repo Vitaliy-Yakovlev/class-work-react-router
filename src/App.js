@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import AppBar from './components/AppBar';
+import Container from './components/Container';
+import HomeView from './views/HomeView';
+import AuthorsView from './views/AuthorsView';
+import BooksView from './views/BooksView';
+import BookDetailsView from './views/BookDetailsView';
+import NotFoundView from './views/NotFoundView';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <AppBar />
+      <Switch>
+        <Route path="/" exact>
+          <HomeView />
+        </Route>
+
+        <Route path="/authors">
+          <AuthorsView />
+        </Route>
+
+        <Route path="/books" exact>
+          <BooksView />
+        </Route>
+
+        <Route path="/books/:bookId">
+          <BookDetailsView />
+        </Route>
+
+        <Route>
+          <NotFoundView />
+        </Route>
+      </Switch>
+    </Container>
   );
-}
+};
 
 export default App;

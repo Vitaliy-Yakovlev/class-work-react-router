@@ -1,26 +1,30 @@
 {
-  "name": "home-work-react--router",
+  "name": "react-21-22",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "mrm": "^3.0.5",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.2.2",
+    "formik": "^2.2.5",
+    "modern-normalize": "^1.0.0",
     "prop-types": "^15.7.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
+    "random-number": "0.0.9",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-icons": "^4.1.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "react-toastify": "^6.2.0",
+    "web-vitals": "^0.2.4",
+    "yup": "^0.32.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "husky install",
-    "predeploy": "npm run build",
-    "deploy": "netlify deploy -p"
+    "server": "json-server --delay 300 --port 5050 --watch db.json "
   },
   "eslintConfig": {
     "extends": [
@@ -41,13 +45,9 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "husky": "^7.0.1",
-    "lint-staged": "^11.1.1",
-    "prettier": "^2.3.2"
-  },
-  "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
+    "husky": "^4.3.0",
+    "json-server": "^0.16.3",
+    "lint-staged": "^10.5.2",
+    "prettier": "^2.2.0"
   }
 }
